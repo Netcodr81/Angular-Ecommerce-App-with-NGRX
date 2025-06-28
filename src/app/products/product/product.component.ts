@@ -14,14 +14,14 @@ import {EventTypes} from '../../core/enums/event-types';
 })
 export class ProductComponent implements OnInit {
 
-  @Input('product') product: Product;
-  @ViewChild('productImageContainer') productImageContainer: ElementRef;
+  @Input('product') product!: Product;
+  @ViewChild('productImageContainer', { static: false }) productImageContainer!: ElementRef;
 
-  currentImage: string;
-  currentImageIndex: number;
-  productImageContainerClientWidth;
-  offSetLeft: number;
-  offSetTop: number;
+  currentImage!: string;
+  currentImageIndex!: number;
+  productImageContainerClientWidth!: number;
+  offSetLeft!: number;
+  offSetTop!: number;
 
   constructor(private store: Store<fromApp.AppState>) {
   }
@@ -33,7 +33,7 @@ export class ProductComponent implements OnInit {
 
   }
 
-  onImageChange(e): void {
+  onImageChange(e: any): void {
     console.log(e);
     const eventType = e.type as EventTypes;
     let clientX;
