@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LayoutModeComponent } from './layout-mode.component';
 
@@ -6,12 +6,12 @@ describe('LayoutModeComponent', () => {
   let component: LayoutModeComponent;
   let fixture: ComponentFixture<LayoutModeComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
     imports: [LayoutModeComponent]
 })
     .compileComponents();
-  }));
+  });  
 
   beforeEach(() => {
     fixture = TestBed.createComponent(LayoutModeComponent);
@@ -23,3 +23,4 @@ describe('LayoutModeComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

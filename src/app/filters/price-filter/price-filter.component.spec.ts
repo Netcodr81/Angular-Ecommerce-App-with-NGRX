@@ -1,4 +1,5 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideMockStore } from '@ngrx/store/testing';
 
 import { PriceFilterComponent } from './price-filter.component';
 
@@ -6,12 +7,22 @@ describe('PriceFilterComponent', () => {
   let component: PriceFilterComponent;
   let fixture: ComponentFixture<PriceFilterComponent>;
 
-  beforeEach(async(() => {
+  const initialState = {
+    priceFilter: {
+      minPrice: 0,
+      maxPrice: 1000
+    }
+  };
+
+  beforeEach(async () => {
     TestBed.configureTestingModule({
-    imports: [PriceFilterComponent]
-})
+      imports: [PriceFilterComponent],
+      providers: [
+        provideMockStore({ initialState })
+      ]
+    })
     .compileComponents();
-  }));
+  });  
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PriceFilterComponent);
@@ -23,3 +34,4 @@ describe('PriceFilterComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

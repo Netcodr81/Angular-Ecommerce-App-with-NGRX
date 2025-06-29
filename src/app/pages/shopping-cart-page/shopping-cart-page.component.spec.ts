@@ -1,4 +1,5 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideMockStore } from '@ngrx/store/testing';
 
 import { ShoppingCartPageComponent } from './shopping-cart-page.component';
 
@@ -6,12 +7,22 @@ describe('ShoppingCartPageComponent', () => {
   let component: ShoppingCartPageComponent;
   let fixture: ComponentFixture<ShoppingCartPageComponent>;
 
-  beforeEach(async(() => {
+  const initialState = {
+    shop: {
+      products: [],
+      cart: []
+    }
+  };
+
+  beforeEach(async () => {
     TestBed.configureTestingModule({
-    imports: [ShoppingCartPageComponent]
-})
+      imports: [ShoppingCartPageComponent],
+      providers: [
+        provideMockStore({ initialState })
+      ]
+    })
     .compileComponents();
-  }));
+  });  
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ShoppingCartPageComponent);
@@ -23,3 +34,4 @@ describe('ShoppingCartPageComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

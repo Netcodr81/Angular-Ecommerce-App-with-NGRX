@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PaginationComponent } from './pagination.component';
 
@@ -6,12 +6,12 @@ describe('PaginationComponent', () => {
   let component: PaginationComponent;
   let fixture: ComponentFixture<PaginationComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
     imports: [PaginationComponent]
 })
     .compileComponents();
-  }));
+  });  
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PaginationComponent);
@@ -23,3 +23,4 @@ describe('PaginationComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
