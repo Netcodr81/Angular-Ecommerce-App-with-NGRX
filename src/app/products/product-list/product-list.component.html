@@ -12,9 +12,8 @@
       </div>
     </div>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-    <div [ngClass]="colValue"
-      *ngFor="let product of products | pagination: {perPage: perPage, currentPage: currentPage}">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6" [ngClass]="colValue">
+    <div *ngFor="let product of products | pagination: {perPage: perPage, currentPage: currentPage}">
       <app-product [product]="product"></app-product>
     </div>
   </div>

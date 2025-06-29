@@ -22,8 +22,8 @@ export class ProductListComponent implements OnInit {
   shop: { products: Product[]; cart: Product[] };
   products: Product[];
 
-  colValue = "col-lg-4";
-  gridValue = 3;
+  colValue = "lg:grid-cols-4";
+  gridValue = 4;
   perPage = 12;
   currentPage = 1;
   pagesToShow = 3;
@@ -51,10 +51,10 @@ export class ProductListComponent implements OnInit {
 
   onChangeLayout(n: number): void {
     this.gridValue = n;
-    if (n === 4) {
-      this.colValue = `col-lg-${3}`;
-    } else {
-      this.colValue = `col-lg-${4}`;
+    if (n === 3) {
+      this.colValue = `lg:grid-cols-3`;
+    } else if (n === 4) {
+      this.colValue = `lg:grid-cols-4`;
     }
   }
 
