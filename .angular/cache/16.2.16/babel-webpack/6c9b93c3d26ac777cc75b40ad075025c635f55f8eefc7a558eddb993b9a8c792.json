@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var EventTypes = /*#__PURE__*/function (EventTypes) {\n  EventTypes[\"MOUSE_MOVE\"] = \"mousemove\";\n  EventTypes[\"TOUCH_MOVE\"] = \"touchmove\";\n  return EventTypes;\n}(EventTypes || {});","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
