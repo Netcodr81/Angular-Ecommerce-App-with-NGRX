@@ -1,30 +1,28 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ProductSliderComponent } from './product-slider.component';
+import { ProductSliderComponent } from "./product-slider.component";
 
-describe('ProductSliderComponent', () => {
+describe("ProductSliderComponent", () => {
   let component: ProductSliderComponent;
   let fixture: ComponentFixture<ProductSliderComponent>;
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
-    imports: [ProductSliderComponent]
-})
-    .compileComponents();
-  });  
+      imports: [ProductSliderComponent],
+    }).compileComponents();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ProductSliderComponent);
     component = fixture.componentInstance;
-    
+
     // Set the required input property
-    component.images = ['test-image1.jpg', 'test-image2.jpg'];
-    
+    component.images = ["test-image1.jpg", "test-image2.jpg"];
+
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
-

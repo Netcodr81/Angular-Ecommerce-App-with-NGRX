@@ -1,28 +1,25 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { provideMockStore } from '@ngrx/store/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { provideMockStore } from "@ngrx/store/testing";
 
-import { ShoppingCartPageComponent } from './shopping-cart-page.component';
+import { ShoppingCartPageComponent } from "./shopping-cart-page.component";
 
-describe('ShoppingCartPageComponent', () => {
+describe("ShoppingCartPageComponent", () => {
   let component: ShoppingCartPageComponent;
   let fixture: ComponentFixture<ShoppingCartPageComponent>;
 
   const initialState = {
     shop: {
       products: [],
-      cart: []
-    }
+      cart: [],
+    },
   };
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [ShoppingCartPageComponent],
-      providers: [
-        provideMockStore({ initialState })
-      ]
-    })
-    .compileComponents();
-  });  
+      providers: [provideMockStore({ initialState })],
+    }).compileComponents();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ShoppingCartPageComponent);
@@ -30,8 +27,7 @@ describe('ShoppingCartPageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
-

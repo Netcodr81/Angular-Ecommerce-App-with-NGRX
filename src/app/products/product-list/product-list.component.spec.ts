@@ -1,28 +1,25 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { provideMockStore } from '@ngrx/store/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { provideMockStore } from "@ngrx/store/testing";
 
-import { ProductListComponent } from './product-list.component';
+import { ProductListComponent } from "./product-list.component";
 
-describe('ProductListComponent', () => {
+describe("ProductListComponent", () => {
   let component: ProductListComponent;
   let fixture: ComponentFixture<ProductListComponent>;
 
   const initialState = {
     shop: {
       products: [],
-      cart: []
-    }
+      cart: [],
+    },
   };
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [ProductListComponent],
-      providers: [
-        provideMockStore({ initialState })
-      ]
-    })
-    .compileComponents();
-  });  
+      providers: [provideMockStore({ initialState })],
+    }).compileComponents();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ProductListComponent);
@@ -30,8 +27,7 @@ describe('ProductListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
-

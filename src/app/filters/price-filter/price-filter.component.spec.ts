@@ -1,28 +1,25 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { provideMockStore } from '@ngrx/store/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { provideMockStore } from "@ngrx/store/testing";
 
-import { PriceFilterComponent } from './price-filter.component';
+import { PriceFilterComponent } from "./price-filter.component";
 
-describe('PriceFilterComponent', () => {
+describe("PriceFilterComponent", () => {
   let component: PriceFilterComponent;
   let fixture: ComponentFixture<PriceFilterComponent>;
 
   const initialState = {
     priceFilter: {
       minPrice: 0,
-      maxPrice: 1000
-    }
+      maxPrice: 1000,
+    },
   };
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [PriceFilterComponent],
-      providers: [
-        provideMockStore({ initialState })
-      ]
-    })
-    .compileComponents();
-  });  
+      providers: [provideMockStore({ initialState })],
+    }).compileComponents();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PriceFilterComponent);
@@ -30,8 +27,7 @@ describe('PriceFilterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
-
