@@ -1,1 +1,0 @@
-{"ast":null,"code":"export const cumulativeOffSet = (element, type) => {\n  let top = 0;\n  let left = 0;\n  do {\n    top += element.offsetTop || 0;\n    left += element.offsetLeft || 0;\n    element = element.offsetParent;\n  } while (element);\n  return {\n    top,\n    left\n  };\n};","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
