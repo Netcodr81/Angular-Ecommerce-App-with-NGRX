@@ -11,7 +11,7 @@ import { ProductListComponent } from "../../products/product-list/product-list.c
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.scss"],
+  styleUrls: ["./home.component.css"],
   imports: [BrandFilterComponent, PriceFilterComponent, ProductListComponent],
 })
 export class HomeComponent implements OnInit {

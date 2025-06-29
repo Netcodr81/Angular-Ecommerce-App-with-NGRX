@@ -9,7 +9,7 @@ import { PriceFormatterPipe } from "../../core/pipes/price-formatter.pipe";
 @Component({
   selector: "app-shopping-cart-container",
   templateUrl: "./shopping-cart-container.component.html",
-  styleUrls: ["./shopping-cart-container.component.scss"],
+  styleUrls: ["./shopping-cart-container.component.css"],
   imports: [CommonModule, ShoppingCartItemComponent, PriceFormatterPipe],
 })
 export class ShoppingCartContainerComponent implements OnInit {

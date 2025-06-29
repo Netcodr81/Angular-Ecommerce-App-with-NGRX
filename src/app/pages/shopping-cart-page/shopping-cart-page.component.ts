@@ -4,7 +4,7 @@ import { ShoppingCartContainerComponent } from "../../shopping-cart/shopping-car
 @Component({
   selector: "app-shopping-cart-page",
   templateUrl: "./shopping-cart-page.component.html",
-  styleUrls: ["./shopping-cart-page.component.scss"],
+  styleUrls: ["./shopping-cart-page.component.css"],
   imports: [ShoppingCartContainerComponent],
 })
 export class ShoppingCartPageComponent implements OnInit {

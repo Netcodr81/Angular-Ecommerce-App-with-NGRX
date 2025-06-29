@@ -1,48 +1,51 @@
-<aside >
-  <article class="card-body p-5">
-    <h3 class="title mb-3">{{product.title}}</h3>
-    <p class="price-detail-wrap">
-	<span class="price h3 text-warning">
-		<span class="currency">$</span><span class="num">{{product.price | priceFormatter}}</span>
-	</span>
+<aside>
+  <article class="p-6">
+    <h3 class="text-2xl font-bold text-gray-900 mb-4">{{product.title}}</h3>
+    <p class="mb-6">
+      <span class="text-3xl font-bold text-yellow-500">
+        <span class="text-sm font-normal text-gray-600">$</span><span>{{product.price | priceFormatter}}</span>
+      </span>
     </p>
-    <dl class="item-property">
-      <dt>Description</dt>
-      <dd><p class="text-capitalize">{{product.description}}</p></dd>
+    <dl class="space-y-4">
+      <dt class="text-lg font-semibold text-gray-900">Description</dt>
+      <dd>
+        <p class="text-gray-700 capitalize">{{product.description}}</p>
+      </dd>
     </dl>
-    <dl class="param param-feature">
-      <dt>Brand</dt>
-      <dd class="text-capitalize">{{product.brand}}</dd>
+    <dl class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <div>
+        <dt class="font-semibold text-gray-900">Brand</dt>
+        <dd class="text-gray-700 capitalize">{{product.brand}}</dd>
+      </div>
+      <div>
+        <dt class="font-semibold text-gray-900">Size</dt>
+        <dd class="text-gray-700">{{product.size}}</dd>
+      </div>
+      <div>
+        <dt class="font-semibold text-gray-900">Camera</dt>
+        <dd class="text-gray-700">{{product.camera}}</dd>
+      </div>
+      <div>
+        <dt class="font-semibold text-gray-900">CPU</dt>
+        <dd class="text-gray-700">{{product.cpu}}</dd>
+      </div>
+      <div>
+        <dt class="font-semibold text-gray-900">Memory</dt>
+        <dd class="text-gray-700">{{product.memory}}</dd>
+      </div>
+      <div>
+        <dt class="font-semibold text-gray-900">Display</dt>
+        <dd class="text-gray-700">{{product.display}}</dd>
+      </div>
+      <div>
+        <dt class="font-semibold text-gray-900">Battery</dt>
+        <dd class="text-gray-700">{{product.battery}}</dd>
+      </div>
     </dl>
-    <dl class="param param-feature">
-      <dt>Size</dt>
-      <dd>{{product.size}}</dd>
-    </dl>
-    <dl class="param param-feature">
-      <dt>Camera</dt>
-      <dd>{{product.camera}}</dd>
-    </dl>
-    <dl class="param param-feature">
-      <dt>CPU</dt>
-      <dd>{{product.cpu}}</dd>
-    </dl>
-    <dl class="param param-feature">
-      <dt>Memory</dt>
-      <dd>{{product.memory}}</dd>
-    </dl>
-    <dl class="param param-feature">
-      <dt>Display</dt>
-      <dd>{{product.display}}</dd>
-    </dl>
-    <dl class="param param-feature">
-      <dt>Battery</dt>
-      <dd>{{product.battery}}</dd>
-    </dl>
-    <hr/>
-    <button
-      (click)="onAddProductToCart()"
-      class="btn btn-lg btn-outline-primary text-uppercase"><i
-      class="fa fa-shopping-cart"></i> Add to cart
+    <hr class="border-gray-200 my-6" />
+    <button (click)="onAddProductToCart()"
+      class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg uppercase tracking-wide transition-colors">
+      <i class="fa fa-shopping-cart mr-2"></i> Add to cart
     </button>
   </article>
 </aside>

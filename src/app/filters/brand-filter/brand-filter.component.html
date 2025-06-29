@@ -1,14 +1,15 @@
-<div class="card mb-3" *ngIf="brandItemsCount">
-  <div class="card-header">
-    <h3>Brands</h3>
+<div class="bg-white rounded-lg shadow-sm border border-gray-200 mb-6" *ngIf="brandItemsCount">
+  <div class="px-4 py-3 border-b border-gray-200 bg-gray-50 rounded-t-lg">
+    <h3 class="text-lg font-semibold text-gray-900">Brands</h3>
   </div>
-  <ul class="list-group flex-row flex-wrap">
-    <li class="list-group-item flex-50" *ngFor="let brand of brands">
-      <label class="custom-checkbox text-capitalize"> {{brand}} ({{brandItemsCount[brand]}})
-        <input type="checkbox"
-               [name]="brand"
-               class="custom-checkbox__input" (input)="onChangeSelectBox($event)"/>
-        <span class="custom-checkbox__span"></span>
+  <ul class="p-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
+    <li class="flex items-center" *ngFor="let brand of brands">
+      <label
+        class="flex items-center cursor-pointer text-sm text-gray-700 capitalize hover:text-gray-900 transition-colors">
+        <input type="checkbox" [name]="brand"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 mr-3"
+          (input)="onChangeSelectBox($event)" />
+        <span>{{brand}} ({{brandItemsCount[brand]}})</span>
       </label>
     </li>
   </ul>

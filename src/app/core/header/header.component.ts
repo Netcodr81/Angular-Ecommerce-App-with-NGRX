@@ -8,7 +8,7 @@ import { AsyncPipe, CommonModule } from "@angular/common";
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.scss"],
+  styleUrls: ["./header.component.css"],
   imports: [CommonModule, RouterLink],
 })
 export class HeaderComponent implements OnInit {

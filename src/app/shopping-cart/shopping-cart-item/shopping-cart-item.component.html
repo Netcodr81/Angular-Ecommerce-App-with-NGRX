@@ -1,40 +1,38 @@
-<div class="row align-items-center mb-3">
-  <div class="col-12 col-sm-12 col-md-2 text-center">
-    <img class="img-responsive" alt="prewiew" style="height: 60%; width: 60%" [src]="product.images[0]"
-    />
+<div class="flex flex-col md:flex-row items-center gap-4 p-4 border-b border-gray-200 last:border-b-0">
+  <div class="flex-shrink-0">
+    <img class="w-20 h-20 object-cover rounded-lg" alt="preview" [src]="product.images[0]" />
   </div>
-  <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
-    <h4 class="product-name"><strong>{{product.title | shortenTitle}}</strong></h4>
-    <h4>
-      <small class="product-description">{{product.description}}</small>
-    </h4>
+
+  <div class="flex-1 text-center md:text-left">
+    <h4 class="text-lg font-semibold text-gray-900">{{product.title | shortenTitle}}</h4>
+    <p class="text-sm text-gray-600 mt-1">{{product.description}}</p>
   </div>
-  <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row product-quantity-container">
-    <div class="col-4 col-sm-4 col-md-6 text-md-right " style="padding-top: 5px">
-      <h6><strong>{{product.price | priceFormatter}}$ <span class="text-muted">x</span></strong></h6>
+
+  <div class="flex flex-col sm:flex-row items-center gap-4">
+    <!-- Price -->
+    <div class="text-center">
+      <span class="text-lg font-semibold text-gray-900">{{product.price | priceFormatter}}$</span>
+      <span class="text-gray-500 mx-2">×</span>
     </div>
-    <div class="col-4 col-sm-4 col-md-4">
-      <div class="quantity">
-        <input
-          (click)="onIncrementCartItem()"
-          type="button" value="+" class="plus"/>
-        <input
-          [value]="product.quantity"
-          [disabled]="true"
-          type="number" step="1" max="10" min="1" title="Qty"
-          class="qty"
-          size="4"/>
-        <input
-          (click)="onDecrementCartItem()"
-          type="button" value="-" class="minus"/>
-      </div>
-    </div>
-    <div class="col-2 col-sm-2 col-md-2 text-right">
-      <button
-        (click)="onRemoveCartItem()"
-        type="button" class="btn btn-outline-danger btn-xs">
-        <i class="fa fa-trash"></i>
+
+    <!-- Quantity Controls -->
+    <div class="flex items-center border border-gray-300 rounded-lg">
+      <button (click)="onDecrementCartItem()" type="button"
+        class="px-3 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-l-lg transition-colors">
+        -
+      </button>
+      <input [value]="product.quantity" [disabled]="true" type="number"
+        class="w-16 px-3 py-2 text-center border-l border-r border-gray-300 focus:outline-none bg-gray-50" readonly />
+      <button (click)="onIncrementCartItem()" type="button"
+        class="px-3 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-r-lg transition-colors">
+        +
       </button>
     </div>
+
+    <!-- Remove Button -->
+    <button (click)="onRemoveCartItem()" type="button"
+      class="px-3 py-2 text-red-600 hover:text-red-800 hover:bg-red-50 rounded-lg transition-colors">
+      <i class="fa fa-trash"></i>
+    </button>
   </div>
 </div>

@@ -1,23 +1,22 @@
-<nav aria-label="...">
-  <ul class="pagination">
-    <li
-      (click)="onPrev()"
-      class="page-item disabled">
-      <button
-        [disabled]="currentPage !== 1"
-        class="page-link" tabindex="-1">Previous</button>
+<nav aria-label="pagination">
+  <ul class="flex items-center justify-center space-x-1">
+    <li (click)="onPrev()" class="cursor-pointer">
+      <button [disabled]="currentPage === 1"
+        class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        tabindex="-1">
+        Previous
+      </button>
     </li>
-    <li
-      *ngFor="let page of getPages()"
-      [class.active]="page === currentPage"
-      (click)="onPage(page)"
-      class="page-item"><button class="page-link">{{page}}</button></li>
-    <li
-      (click)="onNext()"
-      class="page-item">
-      <button [disabled]="isOnLastPage()" class="page-link">Next</button>
+    <li *ngFor="let page of getPages()"
+      [class]="page === currentPage ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-100'"
+      (click)="onPage(page)" class="cursor-pointer">
+      <button class="px-3 py-2 text-sm font-medium border border-gray-300 transition-colors">{{page}}</button>
+    </li>
+    <li (click)="onNext()" class="cursor-pointer">
+      <button [disabled]="isOnLastPage()"
+        class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
+        Next
+      </button>
     </li>
   </ul>
-
 </nav>
-

@@ -4,7 +4,7 @@ import { CommonModule, NgFor } from "@angular/common";
 @Component({
   selector: "app-product-slider",
   templateUrl: "./product-slider.component.html",
-  styleUrls: ["./product-slider.component.scss"],
+  styleUrls: ["./product-slider.component.css"],
   imports: [CommonModule],
 })
 export class ProductSliderComponent implements OnInit {

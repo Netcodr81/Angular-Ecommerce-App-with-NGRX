@@ -1,10 +1,9 @@
-<div class="container" style="padding: 6rem 0px;">
-  <div class="card">
-    <div class="row">
-      <app-product-slider  [images]="product.images" class="col-sm-5 border-right">
-
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+  <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      <app-product-slider [images]="product.images" class="border-r border-gray-200">
       </app-product-slider>
-      <app-product-detail  [product]="product" class="col-sm-7">
+      <app-product-detail [product]="product" class="p-6">
       </app-product-detail>
     </div>
   </div>

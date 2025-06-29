@@ -15,7 +15,7 @@ import { PaginationPipe } from "../../pagination/pagination.pipe";
 @Component({
   selector: "app-product-list",
   templateUrl: "./product-list.component.html",
-  styleUrls: ["./product-list.component.scss"],
+  styleUrls: ["./product-list.component.css"],
   imports: [CommonModule, LayoutModeComponent, ProductComponent, PaginationComponent, PaginationPipe],
 })
 export class ProductListComponent implements OnInit {

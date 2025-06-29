@@ -8,7 +8,7 @@ import { NgIf, NgFor } from "@angular/common";
 @Component({
   selector: "app-brand-filter",
   templateUrl: "./brand-filter.component.html",
-  styleUrls: ["./brand-filter.component.scss"],
+  styleUrls: ["./brand-filter.component.css"],
   imports: [NgIf, NgFor],
 })
 export class BrandFilterComponent implements OnInit {

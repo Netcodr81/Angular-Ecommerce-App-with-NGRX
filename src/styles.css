@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@plugin "tailwindcss-primeui";
+@import "primeicons/primeicons.css";
+@custom-variant dark (&:where(.dark-mode, .dark-mode *));
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Adjust body padding for fixed header */
+body {
+  padding-top: 4rem;
+}
+
+/* Ensure footer stays at bottom */
+body::after {
+  content: "";
+  display: block;
+  height: 6rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 6rem;
+}

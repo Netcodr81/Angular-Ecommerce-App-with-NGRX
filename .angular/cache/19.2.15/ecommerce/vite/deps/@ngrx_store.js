@@ -11,8 +11,6 @@ import {
   Optional,
   RuntimeError,
   Subject,
-  __spreadProps,
-  __spreadValues,
   assertInInjectionContext,
   assertNotInReactiveContext,
   computed,
@@ -36,7 +34,11 @@ import {
   ɵɵdefineNgModule,
   ɵɵgetInheritedFactory,
   ɵɵinject
-} from "./chunk-CHRZSULJ.js";
+} from "./chunk-DQVB6PAZ.js";
+import {
+  __spreadProps,
+  __spreadValues
+} from "./chunk-WDMUDEB6.js";
 
 // node_modules/@angular/core/fesm2022/rxjs-interop.mjs
 function toSignal(source, options) {

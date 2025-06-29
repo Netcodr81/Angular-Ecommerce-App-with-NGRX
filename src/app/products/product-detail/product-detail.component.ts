@@ -8,7 +8,7 @@ import { PriceFormatterPipe } from "../../core/pipes/price-formatter.pipe";
 @Component({
   selector: "app-product-detail",
   templateUrl: "./product-detail.component.html",
-  styleUrls: ["./product-detail.component.scss"],
+  styleUrls: ["./product-detail.component.css"],
   imports: [PriceFormatterPipe],
 })
 export class ProductDetailComponent implements OnInit {

@@ -4,7 +4,7 @@ import { CommonModule, NgFor } from "@angular/common";
 @Component({
   selector: "app-product-slider-dots",
   templateUrl: "./product-slider-dots.component.html",
-  styleUrls: ["./product-slider-dots.component.scss"],
+  styleUrls: ["./product-slider-dots.component.css"],
   encapsulation: ViewEncapsulation.None,
   imports: [CommonModule],
 })

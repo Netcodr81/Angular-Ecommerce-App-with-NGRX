@@ -9,7 +9,7 @@ import { ShortenTitlePipe } from "../../core/pipes/shorten-title.pipe";
 @Component({
   selector: "app-shopping-cart-item",
   templateUrl: "./shopping-cart-item.component.html",
-  styleUrls: ["./shopping-cart-item.component.scss"],
+  styleUrls: ["./shopping-cart-item.component.css"],
   imports: [PriceFormatterPipe, ShortenTitlePipe],
 })
 export class ShoppingCartItemComponent implements OnInit {

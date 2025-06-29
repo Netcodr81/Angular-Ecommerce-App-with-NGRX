@@ -1,0 +1,11 @@
+/* Brand filter component styles - using Tailwind CSS for styling */
+
+.flex-50 {
+  flex: 0 0 100%;
+}
+
+@media (min-width: 640px) {
+  .flex-50 {
+    flex: 0 0 50%;
+  }
+}

@@ -4,7 +4,7 @@ import { CommonModule, NgFor } from "@angular/common";
 @Component({
   selector: "app-pagination",
   templateUrl: "./pagination.component.html",
-  styleUrls: ["./pagination.component.scss"],
+  styleUrls: ["./pagination.component.css"],
   imports: [CommonModule],
 })
 export class PaginationComponent implements OnInit {

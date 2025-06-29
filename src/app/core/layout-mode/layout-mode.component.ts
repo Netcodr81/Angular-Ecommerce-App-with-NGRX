@@ -4,7 +4,7 @@ import { NgFor, NgClass, CommonModule } from "@angular/common";
 @Component({
   selector: "app-layout-mode",
   templateUrl: "./layout-mode.component.html",
-  styleUrls: ["./layout-mode.component.scss"],
+  styleUrls: ["./layout-mode.component.css"],
   imports: [CommonModule],
 })
 export class LayoutModeComponent implements OnInit {

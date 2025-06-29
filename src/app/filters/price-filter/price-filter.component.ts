@@ -1,26 +1,22 @@
-import {Component, OnInit} from '@angular/core';
-import {Store} from '@ngrx/store';
-import * as fromApp from '../../store/app.reducer';
-import {ClearOrderBy, OrderByAsc, OrderByDesc} from '../../store/price-filter/price-filter.action';
-import {Order} from '../../core/enums/order';
-
+import { Component, OnInit } from "@angular/core";
+import { Store } from "@ngrx/store";
+import * as fromApp from "../../store/app.reducer";
+import { ClearOrderBy, OrderByAsc, OrderByDesc } from "../../store/price-filter/price-filter.action";
+import { Order } from "../../core/enums/order";
 
 @Component({
-    selector: 'app-price-filter',
-    templateUrl: './price-filter.component.html',
-    styleUrls: ['./price-filter.component.scss'],
-    standalone: true
+  selector: "app-price-filter",
+  templateUrl: "./price-filter.component.html",
+  styleUrls: ["./price-filter.component.css"],
+  standalone: true,
 })
 export class PriceFilterComponent implements OnInit {
-
-  selectedFilter = '';
+  selectedFilter = "";
   Order = Order;
 
-  constructor(private store: Store<fromApp.AppState>) {
-  }
+  constructor(private store: Store<fromApp.AppState>) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onRadioButtonChange(e): void {
     const value = e.target.value;
@@ -39,13 +35,12 @@ export class PriceFilterComponent implements OnInit {
   }
 
   removefilters(): void {
-    const buttons = document.getElementsByName('orderByPrice') as NodeList;
+    const buttons = document.getElementsByName("orderByPrice") as NodeList;
 
     buttons.forEach((el: HTMLInputElement) => {
       el.checked = false;
     });
-    this.selectedFilter = '';
+    this.selectedFilter = "";
     this.store.dispatch(new ClearOrderBy());
   }
-
 }

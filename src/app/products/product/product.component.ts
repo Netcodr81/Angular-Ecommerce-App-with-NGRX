@@ -12,7 +12,7 @@ import { PriceFormatterPipe } from "../../core/pipes/price-formatter.pipe";
 @Component({
   selector: "app-product",
   templateUrl: "./product.component.html",
-  styleUrls: ["./product.component.scss"],
+  styleUrls: ["./product.component.css"],
   encapsulation: ViewEncapsulation.None,
   imports: [RouterLink, ProductSliderDotsComponent, PriceFormatterPipe],
 })

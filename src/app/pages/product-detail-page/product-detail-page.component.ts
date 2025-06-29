@@ -9,7 +9,7 @@ import { ProductDetailComponent } from "../../products/product-detail/product-de
 @Component({
   selector: "app-product-detail-page",
   templateUrl: "./product-detail-page.component.html",
-  styleUrls: ["./product-detail-page.component.scss"],
+  styleUrls: ["./product-detail-page.component.css"],
   imports: [ProductSliderComponent, ProductDetailComponent],
 })
 export class ProductDetailPageComponent implements OnInit, DoCheck {
