@@ -1,1 +1,0 @@
-{"ast":null,"code":"export var Order = /*#__PURE__*/function (Order) {\n  Order[\"ASC\"] = \"asc\";\n  Order[\"DESC\"] = \"desc\";\n  return Order;\n}(Order || {});","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
