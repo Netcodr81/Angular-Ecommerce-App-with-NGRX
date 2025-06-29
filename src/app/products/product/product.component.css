@@ -43,4 +43,9 @@
   .product {
     height: auto !important;
   }
+
+  .product__add-to-cart {
+    visibility: visible;
+    opacity: 1;
+  }
 }

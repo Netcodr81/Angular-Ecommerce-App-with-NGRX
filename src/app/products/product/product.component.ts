@@ -8,13 +8,14 @@ import { EventTypes } from "../../core/enums/event-types";
 import { RouterLink } from "@angular/router";
 import { ProductSliderDotsComponent } from "../product-slider-dots/product-slider-dots.component";
 import { PriceFormatterPipe } from "../../core/pipes/price-formatter.pipe";
+import { CardModule } from "primeng/card";
 
 @Component({
   selector: "app-product",
   templateUrl: "./product.component.html",
   styleUrls: ["./product.component.css"],
   encapsulation: ViewEncapsulation.None,
-  imports: [RouterLink, ProductSliderDotsComponent, PriceFormatterPipe],
+  imports: [RouterLink, ProductSliderDotsComponent, PriceFormatterPipe, CardModule],
 })
 export class ProductComponent implements OnInit {
   @Input("product") product!: Product;
