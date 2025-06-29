@@ -1,9 +1,12 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-pagination',
-  templateUrl: './pagination.component.html',
-  styleUrls: ['./pagination.component.scss']
+    selector: 'app-pagination',
+    templateUrl: './pagination.component.html',
+    styleUrls: ['./pagination.component.scss'],
+    standalone: true,
+    imports: [NgFor]
 })
 export class PaginationComponent implements OnInit {
 

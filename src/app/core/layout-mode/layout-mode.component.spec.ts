@@ -8,8 +8,8 @@ describe('LayoutModeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LayoutModeComponent ]
-    })
+    imports: [LayoutModeComponent]
+})
     .compileComponents();
   }));
 

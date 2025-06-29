@@ -3,11 +3,15 @@ import {ActivatedRoute} from '@angular/router';
 import {Store} from '@ngrx/store';
 import {Product} from '../../core/models/Product';
 import * as fromApp from '../../store/app.reducer';
+import { ProductSliderComponent } from '../../products/product-slider/product-slider.component';
+import { ProductDetailComponent } from '../../products/product-detail/product-detail.component';
 
 @Component({
-  selector: 'app-product-detail-page',
-  templateUrl: './product-detail-page.component.html',
-  styleUrls: ['./product-detail-page.component.scss']
+    selector: 'app-product-detail-page',
+    templateUrl: './product-detail-page.component.html',
+    styleUrls: ['./product-detail-page.component.scss'],
+    standalone: true,
+    imports: [ProductSliderComponent, ProductDetailComponent]
 })
 export class ProductDetailPageComponent implements OnInit, DoCheck {
 

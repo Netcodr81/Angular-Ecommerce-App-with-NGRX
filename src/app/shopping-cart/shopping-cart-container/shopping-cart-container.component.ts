@@ -2,11 +2,16 @@ import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import * as fromApp from '../../store/app.reducer';
 import {Product} from '../../core/models/Product';
+import { NgIf, NgFor } from '@angular/common';
+import { ShoppingCartItemComponent } from '../shopping-cart-item/shopping-cart-item.component';
+import { PriceFormatterPipe } from '../../core/pipes/price-formatter.pipe';
 
 @Component({
-  selector: 'app-shopping-cart-container',
-  templateUrl: './shopping-cart-container.component.html',
-  styleUrls: ['./shopping-cart-container.component.scss']
+    selector: 'app-shopping-cart-container',
+    templateUrl: './shopping-cart-container.component.html',
+    styleUrls: ['./shopping-cart-container.component.scss'],
+    standalone: true,
+    imports: [NgIf, NgFor, ShoppingCartItemComponent, PriceFormatterPipe]
 })
 export class ShoppingCartContainerComponent implements OnInit {
 

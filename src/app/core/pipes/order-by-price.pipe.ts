@@ -3,7 +3,8 @@ import {Order} from '../enums/order';
 import {Product} from '../models/Product';
 
 @Pipe({
-  name: 'orderByPrice'
+    name: 'orderByPrice',
+    standalone: true
 })
 export class OrderByPricePipe implements PipeTransform {
 

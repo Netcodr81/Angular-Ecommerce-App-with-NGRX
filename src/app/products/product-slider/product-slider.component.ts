@@ -1,9 +1,12 @@
 import {Component, Input, OnInit} from '@angular/core';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-product-slider',
-  templateUrl: './product-slider.component.html',
-  styleUrls: ['./product-slider.component.scss']
+    selector: 'app-product-slider',
+    templateUrl: './product-slider.component.html',
+    styleUrls: ['./product-slider.component.scss'],
+    standalone: true,
+    imports: [NgFor]
 })
 export class ProductSliderComponent implements OnInit {
 

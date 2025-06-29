@@ -2,11 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 import * as fromApp from '../../store/app.reducer';
+import { RouterLink } from '@angular/router';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss'],
+    standalone: true,
+    imports: [RouterLink, AsyncPipe]
 })
 export class HeaderComponent implements OnInit {
 

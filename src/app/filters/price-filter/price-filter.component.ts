@@ -6,9 +6,10 @@ import {Order} from '../../core/enums/order';
 
 
 @Component({
-  selector: 'app-price-filter',
-  templateUrl: './price-filter.component.html',
-  styleUrls: ['./price-filter.component.scss']
+    selector: 'app-price-filter',
+    templateUrl: './price-filter.component.html',
+    styleUrls: ['./price-filter.component.scss'],
+    standalone: true
 })
 export class PriceFilterComponent implements OnInit {
 

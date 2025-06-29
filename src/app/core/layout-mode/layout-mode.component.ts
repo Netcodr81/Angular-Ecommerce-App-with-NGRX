@@ -1,9 +1,12 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { NgFor, NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-layout-mode',
-  templateUrl: './layout-mode.component.html',
-  styleUrls: ['./layout-mode.component.scss']
+    selector: 'app-layout-mode',
+    templateUrl: './layout-mode.component.html',
+    styleUrls: ['./layout-mode.component.scss'],
+    standalone: true,
+    imports: [NgFor, NgClass]
 })
 export class LayoutModeComponent implements OnInit {
 

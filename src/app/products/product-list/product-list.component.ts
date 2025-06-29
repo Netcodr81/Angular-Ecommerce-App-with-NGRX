@@ -6,11 +6,18 @@ import {Product} from '../../core/models/Product';
 import {brandPurePipe} from '../../core/pure-pipes/brand.pure.pipe';
 import {orderByPricePurePipe} from '../../core/pure-pipes/order-by-price.pure.pipe';
 import {Order} from '../../core/enums/order';
+import { NgIf, NgFor, NgClass } from '@angular/common';
+import { LayoutModeComponent } from '../../core/layout-mode/layout-mode.component';
+import { ProductComponent } from '../product/product.component';
+import { PaginationComponent } from '../../pagination/pagination/pagination.component';
+import { PaginationPipe } from '../../pagination/pagination.pipe';
 
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+    selector: 'app-product-list',
+    templateUrl: './product-list.component.html',
+    styleUrls: ['./product-list.component.scss'],
+    standalone: true,
+    imports: [NgIf, LayoutModeComponent, NgFor, NgClass, ProductComponent, PaginationComponent, PaginationPipe]
 })
 export class ProductListComponent implements OnInit {
 

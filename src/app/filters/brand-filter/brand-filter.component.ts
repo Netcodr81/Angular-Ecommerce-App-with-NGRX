@@ -3,11 +3,14 @@ import {brands} from '../../core/data/brands';
 import {Store} from '@ngrx/store';
 import * as fromApp from '../../store/app.reducer';
 import {AddBrandToFilter, RemoveBrandFromFilter} from '../../store/brand-filter/brand-filter.action';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-brand-filter',
-  templateUrl: './brand-filter.component.html',
-  styleUrls: ['./brand-filter.component.scss']
+    selector: 'app-brand-filter',
+    templateUrl: './brand-filter.component.html',
+    styleUrls: ['./brand-filter.component.scss'],
+    standalone: true,
+    imports: [NgIf, NgFor]
 })
 export class BrandFilterComponent implements OnInit {
 

@@ -5,12 +5,17 @@ import {Store} from '@ngrx/store';
 import {AddProductToCart} from '../../store/shop/shop.action';
 import * as fromApp from '../../store/app.reducer';
 import {EventTypes} from '../../core/enums/event-types';
+import { RouterLink } from '@angular/router';
+import { ProductSliderDotsComponent } from '../product-slider-dots/product-slider-dots.component';
+import { PriceFormatterPipe } from '../../core/pipes/price-formatter.pipe';
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-product',
+    templateUrl: './product.component.html',
+    styleUrls: ['./product.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [RouterLink, ProductSliderDotsComponent, PriceFormatterPipe]
 })
 export class ProductComponent implements OnInit {
 
