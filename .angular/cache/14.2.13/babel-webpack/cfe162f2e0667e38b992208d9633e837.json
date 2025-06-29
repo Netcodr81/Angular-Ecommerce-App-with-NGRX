@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { NotFoundComponent } from './core/not-found/not-found.component';\nexport const appRoutes = [{\n  path: '',\n  pathMatch: 'full',\n  redirectTo: 'products'\n}, {\n  path: '**',\n  component: NotFoundComponent\n}];","map":null,"metadata":{},"sourceType":"module"}
