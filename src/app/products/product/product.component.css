@@ -35,23 +35,6 @@
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
-.product__add-to-cart {
-  position: absolute;
-  bottom: 0.8rem;
-  width: 60%;
-  left: 50%;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(-50%);
-  transition: all 0.2s;
-  padding: 3px 12px;
-}
-
-.product:hover .product__add-to-cart {
-  visibility: visible;
-  opacity: 1;
-}
-
 .product:hover .owl-dots {
   display: inline-block;
 }
@@ -59,10 +42,5 @@
 @media only screen and (max-width: 768px) {
   .product {
     height: auto !important;
-  }
-
-  .product__add-to-cart {
-    visibility: visible;
-    opacity: 1;
   }
 }
