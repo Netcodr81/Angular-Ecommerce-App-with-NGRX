@@ -1,20 +1,17 @@
-import {Component, Input, OnInit} from '@angular/core';
-import { NgFor } from '@angular/common';
+import { Component, Input, OnInit } from "@angular/core";
+import { CommonModule, NgFor } from "@angular/common";
 
 @Component({
-    selector: 'app-product-slider',
-    templateUrl: './product-slider.component.html',
-    styleUrls: ['./product-slider.component.scss'],
-    standalone: true,
-    imports: [NgFor]
+  selector: "app-product-slider",
+  templateUrl: "./product-slider.component.html",
+  styleUrls: ["./product-slider.component.scss"],
+  imports: [CommonModule],
 })
 export class ProductSliderComponent implements OnInit {
-
-  @Input('images') images: string[];
+  @Input("images") images: string[];
   currentImage: string;
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit() {
     this.currentImage = this.images[0];
@@ -24,12 +21,7 @@ export class ProductSliderComponent implements OnInit {
     this.currentImage = this.images[n];
   }
 
-  handleImageChange(): void {
+  handleImageChange(): void {}
 
-  }
-
-  handleMouseOut(): void {
-
-  }
-
+  handleMouseOut(): void {}
 }

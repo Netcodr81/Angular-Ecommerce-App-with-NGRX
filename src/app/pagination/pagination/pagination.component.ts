@@ -1,30 +1,25 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import { NgFor } from '@angular/common';
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { CommonModule, NgFor } from "@angular/common";
 
 @Component({
-    selector: 'app-pagination',
-    templateUrl: './pagination.component.html',
-    styleUrls: ['./pagination.component.scss'],
-    standalone: true,
-    imports: [NgFor]
+  selector: "app-pagination",
+  templateUrl: "./pagination.component.html",
+  styleUrls: ["./pagination.component.scss"],
+  imports: [CommonModule],
 })
 export class PaginationComponent implements OnInit {
-
-  @Input('currentPage') currentPage: number;
-  @Input('totalItemsCount') totalItemsCount: number;
-  @Input('perPage') perPage: number;
-  @Input('pagesToShow') pagesToShow: number;
+  @Input("currentPage") currentPage: number;
+  @Input("totalItemsCount") totalItemsCount: number;
+  @Input("perPage") perPage: number;
+  @Input("pagesToShow") pagesToShow: number;
 
   @Output() prev = new EventEmitter<boolean>();
   @Output() next = new EventEmitter<boolean>();
   @Output() goPage = new EventEmitter<number>();
 
-  constructor() {
-  }
+  constructor() {}
 
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onPage(n: number): void {
     this.goPage.emit(n);
@@ -41,7 +36,7 @@ export class PaginationComponent implements OnInit {
   }
 
   getMin(): number {
-    return ((this.perPage * this.currentPage) - this.perPage) + 1;
+    return this.perPage * this.currentPage - this.perPage + 1;
   }
 
   getMax(): number {
@@ -58,7 +53,6 @@ export class PaginationComponent implements OnInit {
   onNext(): void {
     this.next.emit(true);
   }
-
 
   getPages(): number[] {
     const c = Math.ceil(this.totalItemsCount / this.perPage);
@@ -82,5 +76,4 @@ export class PaginationComponent implements OnInit {
     pages.sort((a, b) => a - b);
     return pages;
   }
-
 }

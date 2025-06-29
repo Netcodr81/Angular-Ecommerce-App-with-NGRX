@@ -1,26 +1,24 @@
-import {Component, ElementRef, Input, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
-import {Product} from '../../core/models/Product';
-import {cumulativeOffSet} from '../../utilities/cumulativeOffset';
-import {Store} from '@ngrx/store';
-import {AddProductToCart} from '../../store/shop/shop.action';
-import * as fromApp from '../../store/app.reducer';
-import {EventTypes} from '../../core/enums/event-types';
-import { RouterLink } from '@angular/router';
-import { ProductSliderDotsComponent } from '../product-slider-dots/product-slider-dots.component';
-import { PriceFormatterPipe } from '../../core/pipes/price-formatter.pipe';
+import { Component, ElementRef, Input, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
+import { Product } from "../../core/models/Product";
+import { cumulativeOffSet } from "../../utilities/cumulativeOffset";
+import { Store } from "@ngrx/store";
+import { AddProductToCart } from "../../store/shop/shop.action";
+import * as fromApp from "../../store/app.reducer";
+import { EventTypes } from "../../core/enums/event-types";
+import { RouterLink } from "@angular/router";
+import { ProductSliderDotsComponent } from "../product-slider-dots/product-slider-dots.component";
+import { PriceFormatterPipe } from "../../core/pipes/price-formatter.pipe";
 
 @Component({
-    selector: 'app-product',
-    templateUrl: './product.component.html',
-    styleUrls: ['./product.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    standalone: true,
-    imports: [RouterLink, ProductSliderDotsComponent, PriceFormatterPipe]
+  selector: "app-product",
+  templateUrl: "./product.component.html",
+  styleUrls: ["./product.component.scss"],
+  encapsulation: ViewEncapsulation.None,
+  imports: [RouterLink, ProductSliderDotsComponent, PriceFormatterPipe],
 })
 export class ProductComponent implements OnInit {
-
-  @Input('product') product!: Product;
-  @ViewChild('productImageContainer', { static: false }) productImageContainer!: ElementRef;
+  @Input("product") product!: Product;
+  @ViewChild("productImageContainer", { static: false }) productImageContainer!: ElementRef;
 
   currentImage!: string;
   currentImageIndex!: number;
@@ -28,14 +26,11 @@ export class ProductComponent implements OnInit {
   offSetLeft!: number;
   offSetTop!: number;
 
-  constructor(private store: Store<fromApp.AppState>) {
-  }
-
+  constructor(private store: Store<fromApp.AppState>) {}
 
   ngOnInit() {
     this.currentImage = this.product.images[0];
     this.currentImageIndex = 0;
-
   }
 
   onImageChange(e: any): void {
@@ -80,13 +75,10 @@ export class ProductComponent implements OnInit {
     this.store.dispatch(new AddProductToCart(this.product));
   }
 
-
   calculateOffSetLeftAndTop(eventType: EventTypes): void {
     const offSetTopAndLeft = cumulativeOffSet(this.productImageContainer.nativeElement, eventType);
     this.offSetLeft = offSetTopAndLeft.left;
     this.offSetTop = offSetTopAndLeft.top;
     this.productImageContainerClientWidth = this.productImageContainer.nativeElement.clientWidth;
   }
-
-
 }

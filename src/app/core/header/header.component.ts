@@ -1,24 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import {Store} from '@ngrx/store';
-import {Observable} from 'rxjs';
-import * as fromApp from '../../store/app.reducer';
-import { RouterLink } from '@angular/router';
-import { AsyncPipe } from '@angular/common';
+import { Component, OnInit } from "@angular/core";
+import { Store } from "@ngrx/store";
+import { Observable } from "rxjs";
+import * as fromApp from "../../store/app.reducer";
+import { RouterLink } from "@angular/router";
+import { AsyncPipe, CommonModule } from "@angular/common";
 
 @Component({
-    selector: 'app-header',
-    templateUrl: './header.component.html',
-    styleUrls: ['./header.component.scss'],
-    standalone: true,
-    imports: [RouterLink, AsyncPipe]
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.scss"],
+  imports: [CommonModule, RouterLink],
 })
 export class HeaderComponent implements OnInit {
-
   shop: Observable<any>;
-  constructor(private store: Store<fromApp.AppState>) { }
+  constructor(private store: Store<fromApp.AppState>) {}
 
   ngOnInit() {
-    this.shop = this.store.select('shop');
+    this.shop = this.store.select("shop");
   }
-
 }

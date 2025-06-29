@@ -1,1 +1,0 @@
-{"ast":null,"code":"export const brandPurePipe = (products, brand) => {\n  if (!brand) return products;\n  return products.filter(product => brand.includes(product.brand));\n};","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

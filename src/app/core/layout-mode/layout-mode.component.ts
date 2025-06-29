@@ -1,21 +1,18 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import { NgFor, NgClass } from '@angular/common';
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { NgFor, NgClass, CommonModule } from "@angular/common";
 
 @Component({
-    selector: 'app-layout-mode',
-    templateUrl: './layout-mode.component.html',
-    styleUrls: ['./layout-mode.component.scss'],
-    standalone: true,
-    imports: [NgFor, NgClass]
+  selector: "app-layout-mode",
+  templateUrl: "./layout-mode.component.html",
+  styleUrls: ["./layout-mode.component.scss"],
+  imports: [CommonModule],
 })
 export class LayoutModeComponent implements OnInit {
+  @Input("isActive") isActive: boolean;
+  @Input("len") len: number;
+  @Output("changeLayout") changeLayout = new EventEmitter<number>();
 
-  @Input('isActive') isActive: boolean;
-  @Input('len') len: number;
-  @Output('changeLayout') changeLayout = new EventEmitter<number>();
-
-  constructor() {
-  }
+  constructor() {}
 
   items = [];
 
@@ -24,5 +21,4 @@ export class LayoutModeComponent implements OnInit {
       this.items.push(i);
     }
   }
-
 }
